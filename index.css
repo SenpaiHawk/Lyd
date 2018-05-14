@@ -6,3 +6,7 @@
   border-style: double;
   background-color: #black;
 }
+
+.wrapper{
+  background:transparent url(yourimage.jpg) no-repeat center center;
+}
