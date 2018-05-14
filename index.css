@@ -3,10 +3,13 @@
 }
 
 .box{
-  border-style: double;
-  background-color: #black;
+  border-style: solid;
+  background-color: #white;
+  box-shadow: 2px 2px;
 }
 
 .wrapper{
-  background:transparent url(yourimage.jpg) no-repeat center center;
+  background:transparent url(CounterWallpaper.jpg) no-repeat center center;
+  width:700px;
+  height:400px;
 }
