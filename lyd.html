@@ -1,18 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-var a = a++();
-function myFunction() {
-  return a;
-}
-}
-</script>
+   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-<body onload="startTime()">
+<body>
+  <span title="Upgrades income by 10 every second"><input id="upg1Button" type="button" onclick="Upgrade1();"></input></span>
+  <span title="Upgrades income by 100 every second"><input id="upg2Button" type="button" onclick="Upgrade2();"></input></span>
 
+  <br>
+  <br>
+  <br>
+  <br>
+
+<p id="moneyCanvas" style="text-align:center" class="box">
+
+
+
+<br>
+<br>
+  0
+<br>
+<br>
+<br>
+
+
+</p>
 <div id="txt"></div>
 
 </body>
 </html>
+<script>
+/*var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+function add (){
+})();
+  var counter = 0;
+  return function () {return counter += 1;
+}
+if (i = 1) {
+  setTimeout(function (){
+
+  // Something you want delayed.
+  add();
+})
+}
+while (true) {
+
+}, 1000);*/
+var money = 1;
+var upg1 = 1;
+var i = 1;
+var priceUpg1 = 100;
+var priceUpg2 = 1000;
+var upg2 = 10;
+setInterval (MoneyAdd, 100)
+function MoneyAdd(){
+  money += i;
+
+  document.getElementById("moneyCanvas").innerText=money;
+  document.getElementById("upg1Button").value="Price:" + priceUpg1;
+  document.getElementById("upg2Button").value="Price:" + priceUpg2;
+}
+function motherload(){
+  Motherload;
+}
+function Motherload(){
+  money = money + money * 100;
+}
+function Upgrade(){
+  if (money > priceUpg1) {
+    money = money - priceUpg1;
+    i = i + upg1;
+    priceUpg1 = priceUpg1 * 0.5 + priceUpg1;
+
+  }
+}
+
+function Upgrade2(){
+    if (money > priceUpg2) {
+      money = money - priceUpg2;
+      i = i + upg2;
+      priceUpg2 = priceUpg2 * 0.5 + priceUpg2;
+
+    }
+}
+</script>
