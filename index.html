@@ -4,21 +4,29 @@
    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-<body>
+<body class="wrapper">
   <span title="Upgrades income by 10 every second"><input id="upg1Button" type="button" onclick="Upgrade();"></input></span>
   <span title="Upgrades income by 100 every second"><input id="upg2Button" type="button" onclick="Upgrade2();"></input></span>
   <span title="Upgrades income by 1000 every second"><input id="dbbutton" type="button" onclick="debugUpg();"></input></span>
   <br>
   <br>
 <div class="box">
+<<<<<<< HEAD
   <p id="ips" class="center">Income every second: </p> <!-- Ips = income per second -->
   <p id="moneyCanvas" class="center" class="box"></p> <!-- Flyttet style til index.css: style="text-align:center" -->
+=======
+  <h2 class="fontBig">
+  <p id="moneyCanvas" style="text-align:center" class="center" class="box"></p>
+</h2>
+<span title="Earns money every time you click"><input id="Clicker" type="button" onclick="Click();"></input></span>
+>>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
 </div>
-<div id="txt"></div>
+
 
 </body>
 </html>
 <script>
+<<<<<<< HEAD
 function precisionRound(number, precision) {
   precision -= 1;
   var factor = Math.pow(10, precision);
@@ -38,6 +46,32 @@ var db = 10000;
 var dbp = 1;
 setInterval (MoneyAdd, IntervalToAddMoney)
 function MoneyAdd(){
+=======
+
+var money = 1; //Money
+
+var i = 1; //Money per second
+
+var xyz = 1; //money you earn by clicking da button
+
+var upg1 = 1; //UPGRADES!!
+var priceUpg1 = 100;
+var priceUpg2 = 1000;
+var upg2 = 5;
+
+
+var motherloadValue = 90000; //Cheatcode Value
+
+var db = 10000; //Debugger Money
+var dbp = 1; //Debugger Upgrade Price
+
+
+setInterval (MoneyAdd, 100) //Delays the looping function MoneyAdd
+
+
+function MoneyAdd(){  //Adds money per second
+  money += i;
+>>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
 
   //Ændrede dem til variabler istedet, så er det nemmerer at ændrer den samme 2 gange. -Kresten
   money += i;
@@ -56,19 +90,25 @@ function MoneyAdd(){
   //document.getElementById("upg2Button").value="Price:"  + priceUpg2;
   //document.getElementById("dbbutton").value="Price:"  + dbp;
 }
-var motherloadvalue = 90000;
-function Upgrade(){
+
+function Upgrade(){  //Upgrades Mps
   if (money > priceUpg1) {
     money = money - priceUpg1;
     i = i + upg1;
     priceUpg1 = priceUpg1 * 0.25 + priceUpg1;
   }
 }
+<<<<<<< HEAD
 function motherload(){
   money += motherloadValue; //-Kresten :: money = money + motherloadvalue;
+=======
+
+function motherload(){  //Cheatcode
+  money = money + motherloadvalue;
+>>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
 }
 
-function Upgrade2(){
+function Upgrade2(){  //Upgrade number 2
     if (money > priceUpg2) {
       money -= priceUpg2; //-Kresten :: money = money - priceUpg2;
       i += upg2; //-Kresten :: i = i + upg2;
@@ -76,11 +116,15 @@ function Upgrade2(){
 
     }
 }
-function debugUpg(){
+function debugUpg(){ //DEBUGGING!!
   if (money > dbp) {
     money = money - dbp;
     i = i + db;
     dbp = dbp * 0.25 + dbp;
   }
+}
+
+function Click();{
+  money += xyz;
 }
 </script>

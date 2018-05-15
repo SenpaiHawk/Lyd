@@ -9,10 +9,20 @@
 }
 
 .wrapper{
-  background:transparent url(CounterWallpaper.jpg) no-repeat center center;
+
+  background:transparent url(CounterWallpaper.jpg) repeat center: center;
   width:auto;
   height:auto;
 }
+<<<<<<< HEAD
 #moneyCanvas {
   text-align: center;
 }
+=======
+
+.fontBig{
+  font-style: normal;
+  font-family: monospace;
+  font-size: 40px;
+}
+>>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
