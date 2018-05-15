@@ -19,6 +19,12 @@
 </body>
 </html>
 <script>
+function precisionRound(number, precision) {
+  precision -= 1;
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
+}
+var NumberOfDecimals = 3;
 var IntervalToAddMoney = 100; //Added a variable instead of hardcoding it.
 
 var money = 1;
@@ -32,6 +38,7 @@ var db = 10000;
 var dbp = 1;
 setInterval (MoneyAdd, IntervalToAddMoney)
 function MoneyAdd(){
+
   //Ændrede dem til variabler istedet, så er det nemmerer at ændrer den samme 2 gange. -Kresten
   money += i;
   var moneyCanvas = document.getElementById("moneyCanvas");
@@ -39,10 +46,10 @@ function MoneyAdd(){
   var upg2Button = document.getElementById("upg2Button");
   var dbbutton = document.getElementById("dbbutton");
   var ips = document.getElementById("ips");
-  moneyCanvas.innerText = money;
-  upg1Button.value="Price:" + priceUpg1;
-  upg2Button.value="Price:" + priceUpg2;
-  dbbutton.value="Price:" + dbp;
+  moneyCanvas.innerText = precisionRound(money, NumberOfDecimals);
+  upg1Button.value="Price:" + precisionRound(priceUpg1, NumberOfDecimals);
+  upg2Button.value="Price:" + precisionRound(priceUpg2, NumberOfDecimals);
+  dbbutton.value="Price:" + precisionRound(dbp, NumberOfDecimals);
   ips.innerText = "Income every second: " + i * 10;
   //document.getElementById("moneyCanvas").innerText = money;
   //document.getElementById("upg1Button").value="Price:"  + priceUpg1;
