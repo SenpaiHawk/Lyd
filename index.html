@@ -14,23 +14,36 @@
   <h2 class="fontBig">
   <p id="moneyCanvas" style="text-align:center" class="center" class="box"></p>
 </h2>
+<span title="Earns money every time you click"><input id="Clicker" type="button" onclick="Click();"></input></span>
 </div>
-<div id="txt"></div>
+
 
 </body>
 </html>
 <script>
-var money = 1;
-var upg1 = 1;
-var i = 1;
+
+var money = 1; //Money
+
+var i = 1; //Money per second
+
+var xyz = 1; //money you earn by clicking da button
+
+var upg1 = 1; //UPGRADES!!
 var priceUpg1 = 100;
 var priceUpg2 = 1000;
 var upg2 = 5;
-var motherloadValue = 90000;
-var db = 10000;
-var dbp = 1;
-setInterval (MoneyAdd, 100)
-function MoneyAdd(){
+
+
+var motherloadValue = 90000; //Cheatcode Value
+
+var db = 10000; //Debugger Money
+var dbp = 1; //Debugger Upgrade Price
+
+
+setInterval (MoneyAdd, 100) //Delays the looping function MoneyAdd
+
+
+function MoneyAdd(){  //Adds money per second
   money += i;
 
   document.getElementById("moneyCanvas").innerText=money;
@@ -38,8 +51,8 @@ function MoneyAdd(){
   document.getElementById("upg2Button").value="Price:"  + priceUpg2;
   document.getElementById("dbbutton").value="Price:"  + dbp;
 }
-var motherloadvalue = 90000;
-function Upgrade(){
+
+function Upgrade(){  //Upgrades Mps
   if (money > priceUpg1) {
     money = money - priceUpg1;
     i = i + upg1;
@@ -47,11 +60,12 @@ function Upgrade(){
 
   }
 }
-function motherload(){
+
+function motherload(){  //Cheatcode
   money = money + motherloadvalue;
 }
 
-function Upgrade2(){
+function Upgrade2(){  //Upgrade number 2
     if (money > priceUpg2) {
       money = money - priceUpg2;
       i = i + upg2;
@@ -59,11 +73,15 @@ function Upgrade2(){
 
     }
 }
-function debugUpg(){
+function debugUpg(){ //DEBUGGING!!
   if (money > dbp) {
     money = money - dbp;
     i = i + db;
     dbp = dbp * 0.25 + dbp;
   }
+}
+
+function Click();{
+  money += xyz;
 }
 </script>
