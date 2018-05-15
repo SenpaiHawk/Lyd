@@ -10,7 +10,7 @@
 
 .wrapper{
 
-  background:transparent url(CounterWallpaper.jpg) repeat center center;
+  background:transparent url(CounterWallpaper.jpg) repeat center: center;
   width:auto;
   height:auto;
 }
