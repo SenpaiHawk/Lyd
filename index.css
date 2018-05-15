@@ -4,12 +4,12 @@
 
 .box{
   border-style: solid;
-  background-color: #white;
+  background-color: palevioletred;
   box-shadow: 2px 2px;
 }
 
 .wrapper{
   background:transparent url(CounterWallpaper.jpg) no-repeat center center;
-  width:700px;
-  height:400px;
+  width:auto;
+  height:auto;
 }
