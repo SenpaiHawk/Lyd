@@ -4,11 +4,16 @@
 
 .box{
   border-style: solid;
+<<<<<<< HEAD
   background-color: #008080;
+=======
+  background-color: palevioletred;
+>>>>>>> 99506558e010e87b2ac3d2bf96a1b3951b176e1c
   box-shadow: 2px 2px;
 }
 
 .wrapper{
+<<<<<<< HEAD
   background:transparent url(CounterWallpaper.jpg) repeat center center;
   width:auto;
   height:auto;
@@ -18,4 +23,9 @@
   font-style: normal;
   font-family: monospace;
   font-size: 40px;
+=======
+  background:transparent url(CounterWallpaper.jpg) no-repeat center center;
+  width:auto;
+  height:auto;
+>>>>>>> 99506558e010e87b2ac3d2bf96a1b3951b176e1c
 }
