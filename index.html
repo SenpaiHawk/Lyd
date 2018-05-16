@@ -11,42 +11,23 @@
   <br>
   <br>
 <div class="box">
-<<<<<<< HEAD
   <p id="ips" class="center">Income every second: </p> <!-- Ips = income per second -->
   <p id="moneyCanvas" class="center" class="box"></p> <!-- Flyttet style til index.css: style="text-align:center" -->
-=======
+
   <h2 class="fontBig">
   <p id="moneyCanvas" style="text-align:center" class="center" class="box"></p>
 </h2>
 <span title="Earns money every time you click"><input id="Clicker" type="button" onclick="Click();"></input></span>
->>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
 </div>
 
 
 </body>
 </html>
 <script>
-<<<<<<< HEAD
-function precisionRound(number, precision) {
-  precision -= 1;
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
-}
-var NumberOfDecimals = 3;
-var IntervalToAddMoney = 100; //Added a variable instead of hardcoding it.
 
-var money = 1;
-var upg1 = 1;
-var i = 1;
-var priceUpg1 = 100;
-var priceUpg2 = 1000;
-var upg2 = 5;
-var motherloadValue = 90000;
-var db = 10000;
-var dbp = 1;
-setInterval (MoneyAdd, IntervalToAddMoney)
-function MoneyAdd(){
-=======
+
+var NumberOfDecimals = 3; //Maximmum float decimals
+var IntervalToAddMoney = 100; //Added a variable instead of hardcoding it.
 
 var money = 1; //Money
 
@@ -65,16 +46,12 @@ var motherloadValue = 90000; //Cheatcode Value
 var db = 10000; //Debugger Money
 var dbp = 1; //Debugger Upgrade Price
 
-
-setInterval (MoneyAdd, 100) //Delays the looping function MoneyAdd
+setInterval (MoneyAdd, IntervalToAddMoney) //Adds money every 100 ms
 
 
 function MoneyAdd(){  //Adds money per second
   money += i;
->>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
-
   //Ændrede dem til variabler istedet, så er det nemmerer at ændrer den samme 2 gange. -Kresten
-  money += i;
   var moneyCanvas = document.getElementById("moneyCanvas");
   var upg1Button = document.getElementById("upg1Button");
   var upg2Button = document.getElementById("upg2Button");
@@ -98,14 +75,9 @@ function Upgrade(){  //Upgrades Mps
     priceUpg1 = priceUpg1 * 0.25 + priceUpg1;
   }
 }
-<<<<<<< HEAD
+
 function motherload(){
   money += motherloadValue; //-Kresten :: money = money + motherloadvalue;
-=======
-
-function motherload(){  //Cheatcode
-  money = money + motherloadvalue;
->>>>>>> c77656fe9ba12ad09d6e9089cd1a803bed8be856
 }
 
 function Upgrade2(){  //Upgrade number 2
@@ -126,5 +98,10 @@ function debugUpg(){ //DEBUGGING!!
 
 function Click();{
   money += xyz;
+}
+function precisionRound(number, precision) {  //rounds the decimal value
+  precision -= 1;
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
 }
 </script>
