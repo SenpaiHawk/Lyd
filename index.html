@@ -24,7 +24,6 @@
 </body>
 </html>
 <script>
-<<<<<<< HEAD
 function precisionRound(number, precision) {
   precision -= 1;
   var factor = Math.pow(10, precision);
@@ -43,40 +42,9 @@ var motherloadValue = 90000;
 var db = 10000;
 var dbp = 1;
 setInterval (MoneyAdd, IntervalToAddMoney)
-function MoneyAdd(){
-=======
-
-
-var NumberOfDecimals = 3; //Maximmum float decimals
-var IntervalToAddMoney = 100; //Added a variable instead of hardcoding it.
->>>>>>> f6676151e5be7883dab4df7e395afe738a1d39f5
-
-var money = 1; //Money
-
-var i = 1; //Money per second
-
-var xyz = 1; //money you earn by clicking da button
-
-var upg1 = 1; //UPGRADES!!
-var priceUpg1 = 100;
-var priceUpg2 = 1000;
-var upg2 = 5;
-
-
-var motherloadValue = 90000; //Cheatcode Value
-
-var db = 10000; //Debugger Money
-var dbp = 1; //Debugger Upgrade Price
-
-setInterval (MoneyAdd, IntervalToAddMoney) //Adds money every 100 ms
-
 
 function MoneyAdd(){  //Adds money per second
   money += i;
-<<<<<<< HEAD
-
-=======
->>>>>>> f6676151e5be7883dab4df7e395afe738a1d39f5
   //Ændrede dem til variabler istedet, så er det nemmerer at ændrer den samme 2 gange. -Kresten
   var moneyCanvas = document.getElementById("moneyCanvas");
   var upg1Button = document.getElementById("upg1Button");
@@ -101,18 +69,9 @@ function Upgrade(){  //Upgrades Mps
     priceUpg1 = priceUpg1 * 0.25 + priceUpg1;
   }
 }
-<<<<<<< HEAD
-function motherload(){
-  money += motherloadValue; //-Kresten :: money = money + motherloadvalue;
-}
-
-function motherload(){  //Cheatcode
-  money = money + motherloadvalue;
-=======
 
 function motherload(){
   money += motherloadValue; //-Kresten :: money = money + motherloadvalue;
->>>>>>> f6676151e5be7883dab4df7e395afe738a1d39f5
 }
 
 function Upgrade2(){  //Upgrade number 2
@@ -133,10 +92,5 @@ function debugUpg(){ //DEBUGGING!!
 
 function Click();{
   money += xyz;
-}
-function precisionRound(number, precision) {  //rounds the decimal value
-  precision -= 1;
-  var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
 }
 </script>
