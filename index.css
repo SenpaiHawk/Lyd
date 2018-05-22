@@ -29,3 +29,8 @@
   width: 540px;
   height: 540px;
 }
+.clickimg{
+  background:transparent url(zoidberg.png) center: middle;
+  width: 10%;
+  height: 10%;
+}
