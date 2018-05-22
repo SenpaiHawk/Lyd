@@ -16,10 +16,9 @@
 
   <h2 class="fontBig">
   <p id="moneyCanvas" style="text-align:center" class="center" class="box"></p>
+  <p id="ValueName" type="text"></p>
 </h2>
-<button>
-<img src="zoidberg.png" id="Clicker" class="center" class="imgsize"/>
-</button>
+<span title="Earns money every time you click"><input id="Clicker" type="button" onclick="Click();" class="center"></input></span>
 </div>
 
 
@@ -33,6 +32,8 @@ function precisionRound(number, precision) {
 }
 var NumberOfDecimals = 3;
 var IntervalToAddMoney = 100; //Added a variable instead of hardcoding it.
+
+var xyz = 5; //The amount of money you get from clicking
 
 var money = 1;
 var upg1 = 1;
@@ -68,7 +69,7 @@ function Upgrade(){  //Upgrades Mps
   if (money > priceUpg1) {
     money = money - priceUpg1;
     i = i + upg1;
-    priceUpg1 = priceUpg1 * 0.10 + priceUpg1;
+    priceUpg1 = priceUpg1 * 0.1 + priceUpg1;
   }
 }
 
@@ -80,7 +81,7 @@ function Upgrade2(){  //Upgrade number 2
     if (money > priceUpg2) {
       money -= priceUpg2; //-Kresten :: money = money - priceUpg2;
       i += upg2; //-Kresten :: i = i + upg2;
-      priceUpg2 = priceUpg2 * 0.10 + priceUpg2;
+      priceUpg2 = priceUpg2 * 0.15 + priceUpg2;
 
     }
 }
@@ -88,13 +89,13 @@ function debugUpg(){ //DEBUGGING!!
   if (money > dbp) {
     money = money - dbp;
     i = i + db;
-    dbp = dbp * 0.10 + dbp;
+    dbp = dbp * 0.25 + dbp;
   }
 }
 
-$(function(){
-    $("#Clicker").click(function(){
-        money += xyz;
-    });
-});
+function Click(){
+  money += xyz;
+}
+
+
 </script>
