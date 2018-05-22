@@ -9,8 +9,6 @@
 }
 
 .wrapper{
-
-  background:transparent url(CounterWallpaper.jpg) repeat center: center;
   width:auto;
   height:auto;
 }
@@ -30,7 +28,9 @@
   height: 540px;
 }
 .clickimg{
-  background:transparent url(zoidberg.png) center: middle;
-  width: 10%;
-  height: 10%;
+
+}
+#Clicker{
+  display: block;
+  margin: 0 auto;
 }
