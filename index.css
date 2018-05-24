@@ -70,3 +70,14 @@
 #Achievementdesc{
 
 }
+
+
+/* NOTE: Fade animation */
+#Achievementbox {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#Achievementbox.fade {
+  opacity: 0;
+}

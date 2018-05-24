@@ -43,7 +43,7 @@ var NotificationTime = 3000; // NOTE: This is the NotificationTime in milisecond
 
 var xyz = 5; //The amount of money you get from clicking
 
-var money = 1;
+var money = 0;
 var upg1 = 1;
 var i = 0;
 var priceUpg1 = 100;
@@ -111,14 +111,32 @@ function NotificationBox(icon, title, description){
   iconObject = document.getElementById("Achievementicon");
   titleObject = document.getElementById("Achievementtitle");
   descriptionObject = document.getElementById("Achievementdesc");
+  notificationBoxObject = document.getElementById("Achievementbox");
   iconObject.src = icon;
   titleObject.innerText = title;
   descriptionObject.innerText = description;
-  document.getElementById("Achievementbox").style.display = "block";
+  //document.getElementById("Achievementbox").style.display = "block";
+  notificationBoxObject.style.opacity = 1;
+  notificationBoxObject.style.display = "block";
   setTimeout(CloseNotificationBox, NotificationTime);
 }
 function CloseNotificationBox(){
-  document.getElementById("Achievementbox").style.display = "none";
+  fade(document.getElementById("Achievementbox"));
+  //document.getElementById("Achievementbox").classList.toggle('fade');
+  //document.getElementById("Achievementbox").style.display = "none";
+}
+
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
 }
 
 </script>
