@@ -37,3 +37,47 @@
 #Clicker:hover{
   /* Stuff on hover */
 }
+
+
+/* NOTE: Achievement css */
+#Achievementbox{
+  border-radius: 5px;
+  border-color: green;
+  border-style: solid;
+  /width: 400px;
+  background-color: gray;
+  position: fixed;
+  width: 50%;
+  height: 25%;
+  left: 25%;
+  top: 25%;
+  text-align: center;
+  display: none;
+}
+#Achievementicon{
+  float: left;
+  width: 20%;
+  height: 60%;
+  z-index: auto;
+  width: 70px;
+  height: 70px;/*
+  width="50px" height="50px"*/
+}
+#Achievementtitle{
+  position: absolute;
+  margin: 10px 0 0 100px;
+}
+#Achievementdesc{
+
+}
+
+
+/* NOTE: Fade animation */
+#Achievementbox {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#Achievementbox.fade {
+  opacity: 0;
+}

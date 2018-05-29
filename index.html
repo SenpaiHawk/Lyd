@@ -22,6 +22,12 @@
 <input type="image" onclick="Click();" class="center clickimg imgsize" id="Clicker" src="zoidberg.png"></span>
 </div>
 
+<div id="Achievementbox"> <!-- NOTE: The notification box -->
+<img src="zoidberg.png" id="Achievementicon">
+<p id="Achievementtitle">Sample</p>
+<p id="Achievementdesc">Sameple desc</p>
+</div>
+
 
 </body>
 </html>
@@ -33,10 +39,11 @@ function precisionRound(number, precision) {
 }
 var NumberOfDecimals = 3;
 var IntervalToAddMoney = 100; //Added a variable instead of hardcoding it.
+var NotificationTime = 3000; // NOTE: This is the NotificationTime in miliseconds.
 
 var xyz = 5; //The amount of money you get from clicking
 
-var money = 1;
+var money = 0;
 var upg1 = 1;
 var i = 0;
 var priceUpg1 = 100;
@@ -76,7 +83,8 @@ function Upgrade(){  //Upgrades Mps
 
 function motherload(){
   money += motherloadValue; //-Kresten :: money = money + motherloadvalue;
-  alert("Achievements have been disabled!")
+  //alert("Achievements have been disabled!")
+  NotificationBox("images/icons/info.png", "Info", "Achievements have been disabled!")
 }
 
 function Upgrade2(){  //Upgrade number 2
@@ -98,6 +106,37 @@ function debugUpg(){ //DEBUGGING!!
 function Click(){
   money += xyz;
 }
+// NOTE: Etc. NotificationBox("zoidberg.png", "Amazement", "You got this Achievement becouse your income is above 100 pr second");
+function NotificationBox(icon, title, description){
+  iconObject = document.getElementById("Achievementicon");
+  titleObject = document.getElementById("Achievementtitle");
+  descriptionObject = document.getElementById("Achievementdesc");
+  notificationBoxObject = document.getElementById("Achievementbox");
+  iconObject.src = icon;
+  titleObject.innerText = title;
+  descriptionObject.innerText = description;
+  //document.getElementById("Achievementbox").style.display = "block";
+  notificationBoxObject.style.opacity = 1;
+  notificationBoxObject.style.display = "block";
+  setTimeout(CloseNotificationBox, NotificationTime);
+}
+function CloseNotificationBox(){
+  fade(document.getElementById("Achievementbox"));
+  //document.getElementById("Achievementbox").classList.toggle('fade');
+  //document.getElementById("Achievementbox").style.display = "none";
+}
 
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
+}
 
 </script>
